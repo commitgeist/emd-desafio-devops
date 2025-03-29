@@ -40,3 +40,12 @@ jobs:
           ignore-unfixed: true
           vuln-type: 'os,library'
           severity: 'CRITICAL,HIGH'
+
+  logout:
+    name: Registry Logout
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Docker logout
+        run: docker logout
