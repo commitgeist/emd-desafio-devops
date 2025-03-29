@@ -1,7 +1,15 @@
 services:
   app:
+    container_name: emd-devops-app
     build:
-      context: backend
+      context: .
       dockerfile: Dockerfile
     ports:
       - "8000:8000"
+      
+    environment:
+      - ENV=development
+      - DEBUG=True
+    
+    volumes:
+      - .:/app
